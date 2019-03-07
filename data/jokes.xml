@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--- List of jokes used in skill -->
+<jokes>
+	
+	<joke id="1" category="short robots">
+		<etts language="es"> Si un robot se suicida \\pause=1000 ¿se automáta?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>robots machines</tags>
+	</joke>
+
+	<joke id="2" category="short robots">
+		<etts language="es">Tienes que prestar atención a lo que haces y no ser un mero autómata \\pause=1000 No jodas \\pause=500 hay peces robots?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>robot machines</tags>
+	</joke>
+
+	<joke id="3" category="short robots">
+		<etts language="es">00001110101 \\pause=1000 Ja Ja Ja Ja \\pause=500 No te hizo gracia?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>robot machines</tags>
+	</joke>
+
+	<joke id="4" category="short robots">
+		<etts language="es">Mira \\pause=500 mira \\pause=1000 el baile del robot</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>robot machines</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Hijo, sal del coche y mira si funciona el intermitente. Ahora sí, ahora no, ahora sí, ahora no, ahora sí, ahora no...</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Oye, sabes cómo se llaman los habitantes de Barcelona? Hombre pues todos no</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes caca conversation</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Doctor, tengo todo el cuerpo cubierto de pelo. Qué padezco? Padece uzté un ozito zeñor</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes doctors conversation</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Donde vas, Antonio? A por estiercol para las fresas. Pero por qué no te las comes con nata, como todo el mundo?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags></tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Hombre Juan! Cuanto has cambiado! Yo no soy Juan Más a mi favor</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation juan</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Dos hienas comiendo. Quieres un poco más? No, estoy hiena</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation animals</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Gol. De quien? Di Maria. María, vale, pero quién ha marcado el gol?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation deportes</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Mamá, ¿América está muy lejos? Calla y sigue nadando</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation mom</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Mamá, en el cole me llaman despistado. Niño, que esta no es tu casa.</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes conversation mom</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Qué le dice una impresora a otra? Esa hoja es tuya o es impresión mía</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes machines</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Como se queda un mago después de comer? Mágordito</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes</tags>
+	</joke>
+
+	<joke id="100" category="long robots">
+		<etts language="es">El papá llega a la casa y dice \\pause=700 Compré un robot detector de mentiras que golpea a las personas cuando mienten \\pause=1000 Más tarde decide probarlo en la comida \\pause=1000 Hijo ¿Dónde estuviste hoy? \\pause=700 Estuve en la escuela \\pause=1000 Viene el robot y le da una bofetada al hijo \\pause=1000 Ok \\pause=500 fui a ver una película en la casa de un amigo \\pause=700 Qué película viste? \\pause=700 Los Pitufos \\pause=700 El robot lo golpea otra vez \\pause=700 Ay \\pause=500 perdona! \\pause=700 Era una de adultos \\pause=1000 El papá le grita \\pause=700 Cómo? \\pause=700 Cuando yo tenía tu edad no sabía lo que era una película de adultos! \\pause=1000 Viene el robot y le da tremendo golpe al papá \\pause=1000 La mamá se ríe y dice \\pause=700 Hijo tuyo tenía que ser! \\pause=700 Y el Robot le dió una tremenda bofetada a la mamá</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>robot conversation machines</tags>
+	</joke>
+
+	<joke id="4" category="medium">
+		<etts language="es">Dos amigos. Oye, y tu a qué te dedicas? Dice soy rockero. Ah? Tocas la bateria, cantas... No tio, apilo rocas, y las vendo</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>conversation</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Que guarda Darth Vader en la nevera? Helado oscuro</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>films</tags>
+	</joke>
+
+	<joke id="4" category="short jaimito">
+		<etts language="es">Está Jaimito con el profesor y éste dice, a ver Jaimito, como se dice en inglés dímelo ahora. Dice Jaimito tel mi nao. Muy bien Jaimito, ahora ponlo en una frase. La pelicula se ha telminao</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>conversation english</tags>
+	</joke>
+
+	<joke id="4" category="short jaimito dirty">
+		<etts language="es">Está Jaimito con su madre y le dice, mamá? la luz se come? no por qué hijo? Es que anoche escuché a papá decir a la tía, apaga la luz que te la vas a comer entera</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>conversation sex</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Apilar los barriles!, y Pilar murió aplastada</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>bad_jokes</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Están dos amigos y le dice uno al otro. Anoche me acosté con una americana, y dice joer qué tal? Mucho calor, me la tuve que quitar</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>sex</tags>
+	</joke>
+
+	<joke id="4" category="short dirty">
+		<etts language="es">Hola vengo a hacerme el aumento de pecho y dice el médico y su marido la apoya! No no solo yo las tetas</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>sex</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Cuantas anclas tiene un barco? 11, Por lo de eleven anclas!</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>english</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Qué le dice la foca a su madre? ai lov yu moder foca</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>animals english bad_jokes</tags>
+	</joke>
+
+	<joke id="4" category="short cliche">
+		<etts language="es">Qué son dos vascos en una nube? Chuvascos</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>basques english</tags>
+	</joke>
+
+	<joke id="4" category="short dirty">
+		<etts language="es">Qué hacen 100 testículos colgados en un árbol? Una sombra de cojones</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags></tags>
+	</joke>
+
+	<joke id="4" category="short dirty">
+		<etts language="es">Cariño me voy a correr! Dice la mujer, Hijo puta, para el futin si avisas no?</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>sex</tags>
+	</joke>
+
+	<joke id="4" category="short">
+		<etts language="es">Dos amigos que se acaban de encontrar y dice, pues por fin he encontrado trabajo en una escuela de inglés. Qué bien, enhorabuena! Trabajo estable? No hombre, table es mesa</etts>
+		<gesture>alz_eyes_laughing</gesture>
+		<tags>english conversation</tags>
+	</joke>
+
+</jokes>

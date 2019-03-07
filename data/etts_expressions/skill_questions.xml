@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--- List of questions used in skill -->
+<skill_questions>
+
+  <question type="exit">
+    <langauge type="es">
+      <etts>¿Quieres salir? | ¿Quieres que lo dejemos?</etts>
+      <grammar>si_no.gram</grammar>
+      <answer_id>sino</answer_id>
+    </language>
+    <langauge type="en">
+      <etts>Do you want to exit? | ¿Do you want to leave it?</etts>
+      <grammar>si_no.gram</grammar>
+      <answer_id>sino</answer_id>
+    </language>
+  </question>
+
+  <question type="ask_to_continue">
+    <language type="es">
+      <etts>¿Quieres continuar? | ¿%name? ¿sigues ahí? | ¿Quieres que continuemos? | ¿Te apetece seguir?</etts>
+      <grammar>si_no.gram</grammar>
+      <answer_id>sino</answer_id>
+    </language>
+    <language type="en">
+      <etts>Do you want to continue?| %name? Are you still there?</etts>
+      <grammar>si_no.gram</grammar>
+      <answer_id>sino</answer_id>
+    </language>
+  </question>
+
+</skill_questions>
