@@ -30,6 +30,8 @@ from xml_reader import XMLReader
 from ca_functions import *
 from exceptions_lib import PauseException, ErrorException
 
+import random
+
 # Skill variables
 # Package name
 pkg_name = 'jokes_skill'
@@ -71,13 +73,15 @@ class JokesSkill(Skill):
         self._data_path = self._pkg_path + 'data/' # Data path
 
         # Tablet paths
-        #self._icons_path = 'image/weather/' # Icons path
+        self._icons_path = 'image/jokes/' # Icons path
+        self._default_image = self._icons_path + 'chiquito.gif'
 
         # XMl reader
         self._xml_reader = XMLReader(self._data_path)
 
-        # jokes variables
-        #self.location, self.forecast_type, self.date = '', '', ''
+        # Jokes variables
+        self._type = ''
+        self._categories = []
 
         # init the skill
         Skill.__init__(self, skill_name, CONDITIONAL)
@@ -100,6 +104,8 @@ class JokesSkill(Skill):
         self._number_plays, self._i_plays = 0, 0 # Max number of plays to handle the goal; plays handling goal
         self._limit_method = '' # Indicates limit method selected (max time, plays or both)
         self._time_question = 10000 # Time to make a proactivity question
+
+        self.language, self.user_name = "", ""
 
         # CA variables
         self._answer_received = '' # CA answer received
@@ -196,7 +202,7 @@ class JokesSkill(Skill):
         Stops active etts CA.
         """
 
-        rospy.logdebug()
+        rospy.logdebug('Stop etts')
         ca_info = makeCA_etts_info(etts_text='\\pause=10', emitter=self._emitter)
         self.ca_pub.publish(ca_info)
         ca_deactivation_msg = deactivateCA(ca_info.ca_name)
@@ -368,6 +374,53 @@ class JokesSkill(Skill):
 #=================================================================#
 
 ########################## Goal Handling ##########################
+    def search_info(self):
+
+        # Search new joke
+        if(self._type == 'joke'):
+            etts_text, gesture, tags = self._xml_reader.GetJoke(self._categories, self.language, self.user_name)
+        # Search new saying
+        elif(self._type == 'saying'):
+            etts_text, gesture, tags = self._xml_reader.GetSaying(self._categories, self.language, self.user_name)
+
+        return etts_text, gesture
+
+    def show_info_handler(self, etts_text, gesture):
+        """
+        Show info handler.
+
+        @param parsed_content: Parsed content of the feed.
+        @param article: Article content.
+        @param image_url: Url of the image to be sent.
+        @param image_type: Type of the image to be sent.
+
+        @return tablet_name_msg: Tablet CA name.
+        @return etts_name_msg: Etts CA name.
+        """
+        max_wait = 10
+        # Error found
+        if(etts_text==-1):
+            if(self._type == 'joke'):
+                etts_text = 'Creo que me he quedado sin chistes. Sorry'
+            elif(self._type == 'saying'):
+                etts_text = 'Creo que me he quedado sin refranes. Sorry'
+            gesture = None
+            max_wait = 7
+        else:
+            if('short' in self._categories):
+                max_wait = 20
+            elif('medium' in self._categories):
+                max_wait = 40
+            elif('long' in self._categories):
+                max_wait = 80
+
+        print('etts_text: %s, language: %s, gesture: %s, image_url: %s, tablet_type: %s, emitter: %s' % (etts_text, self.language, gesture, self._default_image, 'image', self._emitter))
+        msg = makeCA_info(etts_text=etts_text, language=self.language, gesture=gesture, image_url=self._default_image, tablet_type='image', emitter=self._emitter)
+        self.ca_pub.publish(msg)
+        self.update_list_ca([msg.ca_name])
+
+        return msg.ca_name, max_wait
+
     def goal_handler(self, goal):
         """
         Goal handler.
@@ -414,14 +467,9 @@ class JokesSkill(Skill):
             return False
         # -- Check categories -- #
         self._categories = self._categories.split(' ') # Divides goal by fields
+        category_list = ['short', 'medium', 'long', 'cliche', 'jaimito', 'robots', 'dirty']
         for category in self._categories:
-            if(category != 'short'
-                and category != 'medium'
-                and category != 'long'
-                and category != 'cliche'
-                and category != 'jaimito'
-                and category != 'robots'
-                and category != 'dirty'):
+            if(category not in category_list and category != 'random'):
                 rospy.logerr('Category \'%s\' NOT accepted' % category)
                 return False
 
@@ -490,8 +538,8 @@ class JokesSkill(Skill):
                     self.exception_check() # If requested, it raises exception, else, it continues
 
                     # Get params
-                    language = self.get_param('langauge')
-                    user_name = self.get_param('user_name')
+                    self.language = self.get_param('langauge')
+                    self.user_name = self.get_param('user_name')
                     # Empty feedback status
                     self._feedback.app_status = ''
 
@@ -501,18 +549,28 @@ class JokesSkill(Skill):
                     # Step 0
                     if(self._step=='Search_info'):
                         rospy.loginfo("Search_info")
-                        # Make step 0 stuff
-                        # ...
+
+                        # Search_info
+                        etts_text, gesture = self.search_info()
+
                         # Next step
-                        self._step = 'Step1'
+                        self._step = 'Show_info'
 
                     # Step 1
-                    elif(self._step=='Step1'):
-                        rospy.loginfo("Step1")
-                        # Make step 1 stuff
-                        # ...
-                        # Next step
-                        self._step = 'StepFinal'
+                    elif(self._step=='Show_info'):
+                        rospy.loginfo("Show_info")
+
+                        # Show info
+                        ca_name, max_wait = self.show_info_handler(etts_text, gesture)
+                        # Wait finish CA
+                        self.wait_ca_finish(ca_name, max_time=max_wait)
+                        # Deactivate ca list
+                        self.deactivate_ca_list()
+                        if(etts_text==-1): # Error
+                            raise ActionlibException # Cancel the goal
+                        else:
+                            # Next step
+                            self._step = 'StepFinal'
 
                     # Step error
                     else:
@@ -529,7 +587,7 @@ class JokesSkill(Skill):
                         self._i_plays += 1
                         self.update_percentage()
                         # Next step
-                        self._step = 'Step0'
+                        self._step = 'Search_info'
 
                         # Exit question
                         if(self._feedback.percentage_completed<100):
@@ -537,8 +595,8 @@ class JokesSkill(Skill):
                             if(self._time_run > self._time_question * n_questions):
                                 # Continue question
                                 rospy.loginfo('Asking to continue')
-                                etts_text, grammar, answer_id = self._xml_reader.GetQuestion('continue', language, user_name)
-                                ca_info = makeCA_ASR_question(etts_text=etts_text, language=language, grammar = grammar, answer_id = answer_id, emitter=self._emitter)
+                                etts_text, grammar, answer_id = self._xml_reader.GetQuestion('continue', self.language, self.user_name)
+                                ca_info = makeCA_ASR_question(etts_text=etts_text, language=self.language, grammar = grammar, answer_id = answer_id, emitter=self._emitter)
                                 self.ca_pub.publish(ca_info)
                                 self.update_list_ca([ca_info.ca_name])
                                 # Wait answer
@@ -548,8 +606,8 @@ class JokesSkill(Skill):
                                     self._feedback.engagement = True
                                 elif(self._answer_received == 'no'): # Stops skill
                                     # Send CA info
-                                    etts_text = self._xml_reader.GetExpression('exit', language, user_name)
-                                    ca_info = makeCA_etts_info(etts_text=etts_text, language=language, emitter=self._emitter)
+                                    etts_text = self._xml_reader.GetExpression('exit', self.language, self.user_name)
+                                    ca_info = makeCA_etts_info(etts_text=etts_text, language=self.language, emitter=self._emitter)
                                     self.ca_pub.publish(ca_info)
                                     self.update_list_ca([ca_info.ca_name])
                                     # Wait finish CA

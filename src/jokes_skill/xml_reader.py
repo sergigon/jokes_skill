@@ -62,13 +62,11 @@ class XMLReader():
 
 		return etts
 
-	def GetJoke(self, joke_categories, language, name=''):
+	def GetJoke(self, input_categories, language, name=''):
 		"""
 		@brief: Get a joke from 'jokes.xml'.
 		@param string joke_type: kind of joke.
 		"""
-
-		input_categories = joke_categories.split(' ')
 
 		tree = ET.parse(self._expressions_path + 'jokes.xml') # Read xml file
 		root = tree.getroot() # Make a tree with the data
@@ -83,22 +81,18 @@ class XMLReader():
 			# Category not coincide
 			if(len(coincidences) < len(input_categories)):
 				continue
-			print joke.attrib['category']
 
 			etts = joke.find('etts/[@language=\'' + language + '\']')
 			gesture = joke.find('gesture')
 			tags = joke.find('tags')
 			if etts is None:
-				print 'continue'
 				continue
+
 			# Save lists
 			etts_list.append(etts.text.encode("utf-8"))
 			gesture_list.append(gesture.text)
 			tags_list.append(tags.text)
 
-		print etts_list
-		print gesture_list
-		print tags_list
 
 		# Check if a joke has been found
 		if (len(etts_list)==0):
@@ -114,29 +108,59 @@ class XMLReader():
 
 		return etts, gesture, tags
 
-	def GetExpression(self, expression_type, language, name=''):
+	def GetSaying(self, input_categories, language, name=''):
 		"""
-		@brief: Get a expression from 'skill_expression.xml'.
-		@param string expression_type: kind of expression.
+		@brief: Get a saying from 'sayings.xml'.
+		@param string saying_type: kind of saying.
 		"""
-		tree = ET.parse(self._expressions_path + 'skill_expressions.xml') # Read xml file
+		print self._expressions_path + 'sayings.xml'
+		tree = ET.parse(self._expressions_path + 'sayings.xml') # Read xml file
 		root = tree.getroot() # Make a tree with the data
-		expression_info_path = "expression/[@type='" + expression_type + "']/language/[@type='" + language + "']"
 
-		# Save data
-		expression = root.find(expression_info_path) # Find the expression type
-		etts = expression.find('etts').text
-		etts = etts.encode("utf-8")
-		etts = etts.replace('%name', name) # Introduce the user's name
+		etts_list = []
+		gesture_list = []
+		tags_list = []
 
-		print ('Expression: %s' % (etts))
+		for saying in root.iter('saying'):
+			output_categories = saying.attrib['category'].split(' ')
+			coincidences = set(output_categories).intersection(input_categories)
+			# Category not coincide
+			if(len(coincidences) < len(input_categories)):
+				continue
 
-		return etts
+			etts = saying.find('etts/[@language=\'' + language + '\']')
+			gesture = saying.find('gesture')
+			tags = saying.find('tags')
+			if etts is None:
+				continue
+
+			# Save lists
+			etts_list.append(etts.text.encode("utf-8"))
+			gesture_list.append(gesture.text)
+			tags_list.append(tags.text)
+
+		# Check if a saying has been found
+		if (len(etts_list)==0):
+			rospy.logdebug('No saying found')
+			return -1, -1, -1
+
+		# Chose random saying
+		index = random.randint(0, len(etts_list)-1)
+		etts, gesture, tags = etts_list[index], gesture_list[index], tags_list[index]
+
+		print ('Saying: %s\nGesture: %s\nTags: %s' % (etts, gesture, tags))
+
+		return etts, gesture, tags
 
 # Main
-import rospy
-import rospkg
-rospack = rospkg.RosPack()
-pkg_path = rospack.get_path('jokes_skill') + '/' # Package path
-data_path = pkg_path + 'data/' # Data path
-XMLReader(data_path).GetJoke('robots', 'es', name='')
+if __name__ == '__main__':
+	try:
+		import rospy
+		import rospkg
+		rospack = rospkg.RosPack()
+		pkg_path = rospack.get_path('jokes_skill') + '/' # Package path
+		data_path = pkg_path + 'data/' # Data path
+		XMLReader(data_path).GetJoke('robots short', 'es', name='')
+
+	except rospy.ROSInterruptException:
+		pass
