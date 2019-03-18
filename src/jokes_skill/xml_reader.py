@@ -62,7 +62,7 @@ class XMLReader():
 
 		return etts
 
-	def GetJoke(self, input_categories, language, name=''):
+	def GetListJokes(self, input_categories, language, name=''):
 		"""
 		@brief: Get a joke from 'jokes.xml'.
 		@param string joke_type: kind of joke.
@@ -76,7 +76,7 @@ class XMLReader():
 		tags_list = []
 
 		for joke in root.iter('joke'):
-			output_categories = joke.attrib['category'].split(' ')
+			output_categories = joke.attrib['category'].split('|')
 			coincidences = set(output_categories).intersection(input_categories)
 			# Category not coincide
 			if(len(coincidences) < len(input_categories)):
@@ -93,10 +93,23 @@ class XMLReader():
 			gesture_list.append(gesture.text)
 			tags_list.append(tags.text)
 
-
 		# Check if a joke has been found
 		if (len(etts_list)==0):
 			rospy.logdebug('No joke found')
+			return -1, -1, -1
+
+		return etts_list, gesture_list, tags_list
+
+	def GetJoke(self, input_categories, language, name=''):
+		"""
+		@brief: Get a joke from 'jokes.xml'.
+		@param string joke_type: kind of joke.
+		"""
+
+		etts_list, gesture_list, tags_list = self.GetListJokes(input_categories, language, name)
+
+		# Error
+		if (etts_list == -1):
 			return -1, -1, -1
 
 		# Chose random joke
@@ -108,12 +121,12 @@ class XMLReader():
 
 		return etts, gesture, tags
 
-	def GetSaying(self, input_categories, language, name=''):
+	def GetListSayings(self, input_categories, language, name=''):
 		"""
 		@brief: Get a saying from 'sayings.xml'.
 		@param string saying_type: kind of saying.
 		"""
-		print self._expressions_path + 'sayings.xml'
+
 		tree = ET.parse(self._expressions_path + 'sayings.xml') # Read xml file
 		root = tree.getroot() # Make a tree with the data
 
@@ -122,7 +135,7 @@ class XMLReader():
 		tags_list = []
 
 		for saying in root.iter('saying'):
-			output_categories = saying.attrib['category'].split(' ')
+			output_categories = saying.attrib['category'].split('|')
 			coincidences = set(output_categories).intersection(input_categories)
 			# Category not coincide
 			if(len(coincidences) < len(input_categories)):
@@ -144,6 +157,20 @@ class XMLReader():
 			rospy.logdebug('No saying found')
 			return -1, -1, -1
 
+		return etts_list, gesture_list, tags_list
+
+	def GetSaying(self, input_categories, language, name=''):
+		"""
+		@brief: Get a saying from 'sayings.xml'.
+		@param string saying_type: kind of saying.
+		"""
+
+		etts_list, gesture_list, tags_list = self.GetListJokes(input_categories, language, name)
+
+		# Error
+		if (etts_list == -1):
+			return -1, -1, -1
+
 		# Chose random saying
 		index = random.randint(0, len(etts_list)-1)
 		etts, gesture, tags = etts_list[index], gesture_list[index], tags_list[index]
@@ -160,7 +187,7 @@ if __name__ == '__main__':
 		rospack = rospkg.RosPack()
 		pkg_path = rospack.get_path('jokes_skill') + '/' # Package path
 		data_path = pkg_path + 'data/' # Data path
-		XMLReader(data_path).GetJoke('robots short', 'es', name='')
+		XMLReader(data_path).GetJoke(['robots','short'], 'es', name='')
 
 	except rospy.ROSInterruptException:
 		pass

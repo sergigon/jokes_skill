@@ -23,7 +23,7 @@ import actionlib
 import jokes_skill.msg
 from std_msgs.msg import String, Empty
 from interaction_msgs.msg import CA
-from hri_manager.key_value_pairs import to_dict
+#from hri_manager.key_value_pairs import to_dict
 
 # Local libraries
 from xml_reader import XMLReader
@@ -378,12 +378,12 @@ class JokesSkill(Skill):
 
         # Search new joke
         if(self._type == 'joke'):
-            etts_text, gesture, tags = self._xml_reader.GetJoke(self._categories, self.language, self.user_name)
+            etts_text_list, gesture_list,_ = self._xml_reader.GetListJokes(self._categories, self.language, self.user_name)
         # Search new saying
         elif(self._type == 'saying'):
-            etts_text, gesture, tags = self._xml_reader.GetSaying(self._categories, self.language, self.user_name)
+            etts_text_list, gesture_list,_ = self._xml_reader.GetListSayings(self._categories, self.language, self.user_name)
 
-        return etts_text, gesture
+        return etts_text_list, gesture_list
 
     def show_info_handler(self, etts_text, gesture):
         """
@@ -466,7 +466,7 @@ class JokesSkill(Skill):
             rospy.logerr('Type NOT accepted')
             return False
         # -- Check categories -- #
-        self._categories = self._categories.split(' ') # Divides goal by fields
+        self._categories = self._categories.split('|') # Divides categories by fields
         category_list = ['short', 'medium', 'long', 'cliche', 'jaimito', 'robots', 'dirty']
         for category in self._categories:
             if(category not in category_list and category != 'random'):
@@ -551,12 +551,27 @@ class JokesSkill(Skill):
                         rospy.loginfo("Search_info")
 
                         # Search_info
-                        etts_text, gesture = self.search_info()
+                        etts_text_list, gesture_list = self.search_info()
+
+                        # Next step
+                        self._step = 'Select_info'
+
+                    # Step 1
+                    if(self._step=='Select_info'):
+                        rospy.loginfo("Select_info")
+
+                        if(len(etts_text_list) == 0):
+                            etts_text, gesture = -1, -1
+                            rospy.logwarn('No more info')
+                        else:
+                            # Chose random
+                            index = random.randint(0, len(etts_text_list)-1)
+                            etts_text, gesture = etts_text_list.pop(index), gesture_list.pop(index)
 
                         # Next step
                         self._step = 'Show_info'
 
-                    # Step 1
+                    # Step 2
                     elif(self._step=='Show_info'):
                         rospy.loginfo("Show_info")
 
@@ -587,7 +602,7 @@ class JokesSkill(Skill):
                         self._i_plays += 1
                         self.update_percentage()
                         # Next step
-                        self._step = 'Search_info'
+                        self._step = 'Select_info'
 
                         # Exit question
                         if(self._feedback.percentage_completed<100):
