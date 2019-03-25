@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot"/>
+	<arg name="robot" default="$(env HOSTNAME)"/>
 	<group ns="$(arg robot)">
 		<node name="jokes_skill" pkg="jokes_skill" type="jokes_node.py" output="screen"/>
 	</group>

@@ -1,19 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!--- List of expressions used in skill -->
 <skill_expressions>
 
-  <expression type="exit">
-    <langauge type="es">
-      <etts> Vale, lo dejamos | Okey, paramos ya</etts>
-      <grammar>si_no.gram</grammar>
-      <answer_id>sino</answer_id>
-    </language>
-    <langauge type="en">
-      <etts>Okey, we leave it | Okey, we stop</etts>
-      <grammar>si_no.gram</grammar>
-      <answer_id>sino</answer_id>
-    </language>
-  </expression>
+	<expression type="exit">
+		<language type="es">
+			<etts>Vale \\pause=600 lo dejamos | Okey \\pause=600 paramos ya</etts>
+		</language>
+
+		<language type="en">
+			<etts>Okey \\pause=600 we leave it | Okey \\pause=600 we stop</etts>
+		</language>
+	</expression>
 
 </skill_expressions>

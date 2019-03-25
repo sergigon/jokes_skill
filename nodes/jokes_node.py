@@ -15,21 +15,21 @@ __status__ = "Development"
 from skill.skill import Skill, ActionlibException, CONDITIONAL
 import rospkg
 import rospy
-import roslib
-import importlib
 import actionlib
 
 # Messages
 import jokes_skill.msg
 from std_msgs.msg import String, Empty
-from interaction_msgs.msg import CA
-#from hri_manager.key_value_pairs import to_dict
+from interaction_msgs.msg import CA, CaResult
 
 # Local libraries
-from xml_reader import XMLReader
-from ca_functions import *
-from exceptions_lib import PauseException, ErrorException
+from interaction_utils.ca_functions import *
+from context_manager.params_lib import get_param
+from hri_manager.key_value_pairs import to_dict
+from jokes_skill.xml_reader import XMLReader
+from jokes_skill.exceptions_lib import PauseException, ErrorException
 
+# Libraries
 import random
 
 # Skill variables
@@ -51,15 +51,8 @@ class JokesSkill(Skill):
 
     # Constants
 
-    # Params constants
-    _LANG_PARAM = 'context/user/language'
-    _USER_NAME_PARAM = 'context/user/name'
-
-
+    ## @brief Init method
     def __init__(self):
-        """
-        Init method.
-        """
 
         # Class variables
         self._as = None # SimpleActionServer variable
@@ -86,10 +79,8 @@ class JokesSkill(Skill):
         # init the skill
         Skill.__init__(self, skill_name, CONDITIONAL)
 
+    ## @brief Initialization of variables
     def init_variables(self):
-        """
-        Initialization of variables.
-        """
 
         # Goal control variables
         self._goal_exec = False # Indicates if goal is being handled
@@ -105,35 +96,36 @@ class JokesSkill(Skill):
         self._limit_method = '' # Indicates limit method selected (max time, plays or both)
         self._time_question = 10000 # Time to make a proactivity question
 
-        self.language, self.user_name = "", ""
-
         # CA variables
-        self._answer_received = '' # CA answer received
+        self._response = {'result':'', 'ca_name':'', 'values':{}} # CA answer received
+        self._active_ca = ''
 
 ######################### Skill Callbacks #########################
+    ## @brief Receive the response from an asking for info CA
+    #  @param recog_response: CA response
     def response_callback(self, recog_response): ## No modify ##
-        """
-        Receive the response from an asking for info CA.
-        """
 
-        if(recog_response.emitter == self._emitter):
-            values = to_dict(recog_response.values)
-            ans = values['answer_value'].lower() # Turn it into lower case
+        # Checks if response corresponds to skill CAs
+        if(recog_response.emitter == self._emitter): # Skill CA
+            try:
+                values = to_dict(recog_response.values)
+                self._response = {'result':recog_response.result, 'ca_name':recog_response.ca_name.replace('ca_', ''), 'values':values}
+                # Update error
+                if self._response['result'] in ["communicationproblems", "no_response"]: # If there's some problem or user not response
+                    response.update({'result':'Error'})
+            except AttributeError as e:
+                rospy.logerr(e)
+                self._response = {'result':'', 'ca_name':'', 'values':{}}
+            except KeyError as e:
+                rospy.logerr(e)
+                self._response = {'result':'', 'ca_name':'', 'values':{}}
 
-            rospy.logdebug("Received response: " + ans)
+        else: # Different CA
+            rospy.logwarn('CA response not expected')
 
-            if ans in ["communicationproblems", "no_response"]: # If there's some problem or user not response
-                self._answer_received = 'Error'
-            else:
-                self._answer_received = ans
-
-        else:
-            rospy.logwarn('Response not expected')
-
+    ## @brief Pause callback
+    #  Modify the variable self._pause if goal is being handled, when a pause is requested
     def pause_exec(self): ## No modify ##
-        """
-        Modify the variable self._pause if goal is being handled, when a pause is requested.
-        """
 
         if(self._goal_exec and not self._pause): # Goal being handled and not in pause
             self._pause_requested = True
@@ -143,21 +135,19 @@ class JokesSkill(Skill):
         else: # Goal NOT being handled
             rospy.logwarn('Goal not being handled')
 
+    ## @brief Pause callback
+    #  Modify the variable self._resume, when a resume is requested
     def resume_exec(self): ## No modify ##
-        """
-        Modify the variable self._pause, when a resume is requested.
-        """
 
         self._pause = False
         self._feedback.app_status = 'resume_ok'
         self._as.publish_feedback(self._feedback)
 
+    ## @brief Start callback
+    #  Callback called when skill is started
+      #  @raise rospy.ROSException: If the service is inactive
     def create_msg_srv(self):
-        """
-        Callback called when skill is started.
-
-        @raise rospy.ROSException: if the service is inactive.
-        """
+        
         rospy.loginfo("Start requested")
 
         # publishers and subscribers
@@ -167,9 +157,7 @@ class JokesSkill(Skill):
             "hri_manager/ca_deactivations", String, queue_size=1) # CA deactivation publisher
 
         self.sub_response = rospy.Subscriber(
-            "hri_manager/response", CA, self.response_callback) # CA response
-
-        #self.sub_response = rospy.Subscriber(robot + "hri_manager/response", CA, self.response_callback) # CA subscriber
+            "hri_manager/response", CaResult, self.response_callback) # CA response
 
         # servers and clients
 
@@ -179,10 +167,9 @@ class JokesSkill(Skill):
             # start the action server
             self._as.start()
 
+    ## @brief Stop callback
+    #  Callback called when skill is stopped
     def shutdown_msg_srv(self):
-        """
-        Callback called when skill is stopped.
-        """
 
         # publishers and subscribers
         # FIXME: do not unregister publishers because a bug in ROS
@@ -194,81 +181,66 @@ class JokesSkill(Skill):
 
         # Cancel goal
         self._as.preempt_request = True
+
+        self._feedback.app_status = 'stop_ok'
+        self._as.publish_feedback(self._feedback)
 #=================================================================#
 
 ######################### Skill Functions #########################
+    ## @brief Stops active etts CA
     def stop_etts(self): ## No modify ##
-        """
-        Stops active etts CA.
-        """
 
         rospy.logdebug('Stop etts')
         ca_info = makeCA_etts_info(etts_text='\\pause=10', emitter=self._emitter)
         self.ca_pub.publish(ca_info)
-        ca_deactivation_msg = deactivateCA(ca_info.ca_name)
-        self.ca_deactivation_pub.publish(ca_deactivation_msg)
 
-    def deactivate_ca_list(self): ## No modify ##
-        """
-        Deactivate all CAs in the list.
-        """
+     ## @brief Deactivate active CA
+    def deactivate_ca(self): ## No modify ##
 
-        for ca_name in self._list_ca:
-            msg = deactivateCA(ca_name)
+        if(self._active_ca != ''): ## CA active
+            msg = deactivateCA(self._active_ca)
             self.ca_deactivation_pub.publish(msg)
-        self._list_ca = []
+            self._active_ca = ''
+            #self.stop_etts()
 
-        # Stop etts
-        self.stop_etts()
-
-    def update_list_ca(self, list_ca): ## No modify ##
-        """
-        Update the list of active CAs.
-
-        @param ca_list: List of CAs.
-        """
-
-        for ca_name in list_ca:
-            rospy.logdebug('Adding CA: %s to CA list' % ca_name)
-        self._list_ca.extend(list_ca)
-
-    def wait_ca_finish(self, ca_name, max_time=60): ## No modify ##
-        """
-        Enters a loop until the CA has finished, or a exception has been called.
-
-        @param ca_name: Name of the CA.
-        @param max_time: Max time to for the CA.
-        """
-
-        rospy.logdebug('Waiting CA %s to finish' % ca_name)
-        t0, t1 = time.time(), time.time()
-        #while(t1-t0<max_time and ca_finished):
-        while(t1-t0<max_time):
-            # Check exceptions
-            self.exception_check()
-            rospy.sleep(1)
-            t1=time.time()
-        rospy.logdebug('CA finished')
-
-    def wait_ca_answer(self, ca_info): ## No modify ##
-        """
-        Enters a loop until the CA has received an answer, or a exception has been called.
-
-        @param ca_info: CA message.
-        """
+    ## @brief Waits CA response
+    #  Enters a loop until the CA has received a response,
+    #  some time has passed or a exception has been called.
+    #  @param ca_info: CA message
+        #  @param max_time: Max time for the CA to finish, If 0, no max time
+        #    If question is waited, max time will be calculated with
+        #    answer_time and answer_attempts
+        #  @param force_max_time: If true, not waits ca to stop, but uses only max_time
+    def wait_ca_response(self, ca_info, max_time=0, force_max_time=False): ## No modify ##
 
         rospy.logdebug('Waiting CA %s response' % ca_info.ca_name)
-        values = to_dict(ca_info.values)
-        t0, t1 = time.time(), time.time()
-        while(self._answer_received == '' and t1-t0<(int(values['answer_time'])+4) * int(values['answer_attempts'])):
-            rospy.sleep(1)
-            t1=time.time()
-        rospy.logdebug('Response received')
+        self._active_ca = ca_info.ca_name
+        # If answer, max_time will be answer_time*answer_attempts+ktime
+        ca_info_values = to_dict(ca_info.values)
+        if('answer_time' and 'answer_attempts' in ca_info_values):
+            max_time = (int(ca_info_values['answer_time'])+10) * int(ca_info_values['answer_attempts'])
 
+        t0 = time.time()
+        t = -1
+        ca_name = 'forced' if(force_max_time) else ca_info.ca_name
+        # Wait loop
+        while(t<max_time and self._response['ca_name']!=ca_name):
+            self.exception_check() # Check exceptions
+            rospy.sleep(0.2)
+            t = time.time()-t0 if(max_time!=0) else -1
+        # Checks if response has been received
+        if(self._response['ca_name']==ca_info.ca_name):
+            rospy.logdebug('Response received')
+            self._active_ca = ''
+        else:
+            rospy.logwarn('Response not received. Deactivating CA %s' % ca_info.ca_name)
+            self.deactivate_ca()
+
+    ## @brief Checks if an exception has been requested
+    #  The exception request can be a preempt request or a pause request
+      #  @raise ActionlibException: Preempt requested
+      #  @raise PauseException: Pause requested
     def exception_check(self): ## No modify ##
-        """
-        Checks if an exception has been asked. It can be by a preempt request or by a pause request.
-        """
 
         # Raise exceptions
         ############# State Preempted checking #############
@@ -287,10 +259,9 @@ class JokesSkill(Skill):
             rospy.logwarn('Raising Pause Exception')
             raise PauseException
 
+    ## @brief Pause loop
+    #  Finishes when goal is resumed or cancelled
     def pause_wait(self): ## No modify ##
-        """
-        Pause loop. Finishes when goal is resumed or cancelled.
-        """
 
         if(self._pause and not self._as.is_preempt_requested()):
             rospy.loginfo('Start waiting')
@@ -302,10 +273,9 @@ class JokesSkill(Skill):
                 rospy.logdebug('waiting...')
                 rospy.sleep(1)
 
+    ## @brief Update the skill percentage
     def update_percentage(self): ## No modify ##
-        """
-        Update the skill percentage.
-        """
+
         percentage_plays, percentage_time = 0, 0
 
         if(self._limit_method == 'both' or self._limit_method == 'plays'):
@@ -319,87 +289,54 @@ class JokesSkill(Skill):
         percentage = percentage if percentage<100 else 100
         rospy.loginfo('percentage: %s' % percentage)
         self._feedback.percentage_completed = percentage
-
-    def get_param(self, param_name): ## No modify ##
-        """
-        Get the param from the context manager params server.
-        """
-
-        # Language
-        if(param_name == 'langauge'):
-            try:
-                language = rospy.get_param(self._LANG_PARAM) # Get langauge
-            except KeyError:
-                language = 'es'
-                rospy.logwarn("Language not found. Using language %s" % language)
-            return language
-
-        # User name
-        elif(param_name == 'user_name'):
-            try:
-                user_name = rospy.get_param(self._USER_NAME_PARAM) # Get user name
-            except KeyError:
-                user_name = ''
-                rospy.logwarn("User name not found. Using empty name")
-            return user_name
-
-        # Unknow param name
-        else:
-            rospy.logerr("Param name '%s' not found. %s" % param_name)
-            return -1
 #=================================================================#
 
 ######################### Timer Functions #########################
+    ## @brief Starts timer
+    #  Update t0 and initialize time_run
     def start_timer(self): ## No modify ##
-        """
-        Starts timer. Update t0 and initialize time_run.
-        """
 
         self._t0 = time.time()
         self._time_run = 0
 
+    ## @brief Restarts timer
+    #  Update t0
     def restart_timer(self): ## No modify ##
-        """
-        Restart timer. Update t0.
-        """
 
         self._t0 = time.time()
 
+    ## @brief Updates timer
+    #  Update time_run
     def update_timer(self): ## No modify ##
-        """
-        Update timer. Update time_run.
-        """
 
         self._time_run += time.time() - self._t0
 #=================================================================#
 
 ########################## Goal Handling ##########################
-    def search_info(self):
+    ## @brief Searchs the expressions and questions list depending on the goal
+      #  @return etts_list: List of etts texts
+      #  @return gesture_list: List of gestures
+    def search_info(self, language, user_name):
 
         # Search new joke
         if(self._type == 'joke'):
-            etts_text_list, gesture_list,_ = self._xml_reader.GetListJokes(self._categories, self.language, self.user_name)
+            item_list = self._xml_reader.GetListJokes(self._categories, language, user_name)
         # Search new saying
         elif(self._type == 'saying'):
-            etts_text_list, gesture_list,_ = self._xml_reader.GetListSayings(self._categories, self.language, self.user_name)
+            item_list = self._xml_reader.GetListSayings(self._categories, language, user_name)
 
-        return etts_text_list, gesture_list
+        return item_list
 
-    def show_info_handler(self, etts_text, gesture):
-        """
-        Show info handler.
+    ## @brief Show info handler
+    #  @param etts_text: Etts text to display
+    #  @param gesture: Gesture to display
+      #  @return ca_info
+      #  @return max_wait
+    def show_info_handler(self, item, language):
 
-        @param parsed_content: Parsed content of the feed.
-        @param article: Article content.
-        @param image_url: Url of the image to be sent.
-        @param image_type: Type of the image to be sent.
-
-        @return tablet_name_msg: Tablet CA name.
-        @return etts_name_msg: Etts CA name.
-        """
-        max_wait = 10
+        max_wait = 100
         # Error found
-        if(etts_text==-1):
+        if(item==-1):
             if(self._type == 'joke'):
                 etts_text = 'Creo que me he quedado sin chistes. Sorry'
             elif(self._type == 'saying'):
@@ -407,30 +344,27 @@ class JokesSkill(Skill):
             gesture = None
             max_wait = 7
         else:
-            if('short' in self._categories):
-                max_wait = 20
+            etts_text = item['etts']
+            gesture = item['gesture']
+            if('long' in self._categories):
+                max_wait = 80
             elif('medium' in self._categories):
                 max_wait = 40
-            elif('long' in self._categories):
-                max_wait = 80
+            elif('short' in self._categories):
+                max_wait = 20
 
-        print('etts_text: %s, language: %s, gesture: %s, image_url: %s, tablet_type: %s, emitter: %s' % (etts_text, self.language, gesture, self._default_image, 'image', self._emitter))
-        msg = makeCA_info(etts_text=etts_text, language=self.language, gesture=gesture, image_url=self._default_image, tablet_type='image', emitter=self._emitter)
-        self.ca_pub.publish(msg)
-        self.update_list_ca([msg.ca_name])
+        rospy.logdebug('etts_text: %s, language: %s, gesture: %s, image_url: %s, tablet_type: %s' % (etts_text, language, gesture, self._default_image, 'image'))
+        ca_info = makeCA_info(etts_text=etts_text, language=language, gesture=gesture, tablet_url=self._default_image, tablet_type='image', emitter=self._emitter)
+        self.ca_pub.publish(ca_info)
 
-        return msg.ca_name, max_wait
+        return ca_info, max_wait
 
+    ## @brief Goal handler
+    #  Checks if the goal is appropriate.
+    #  If True, it configures the variables for the goal execution
+    #  @param goal: Goal received
+      #  @return goal_accepted: True if goal is accepted, else False
     def goal_handler(self, goal):
-        """
-        Goal handler.
-
-        Checks if the goal is appropriate. If True, it configures the variables for the goal execution.
-
-        @param goal: Goal received.
-
-        @return goal_accepted: True if goal is accepted, else, False.
-        """
 
         # Fill goal variables
         # -- Skill command -- #
@@ -488,12 +422,10 @@ class JokesSkill(Skill):
         rospy.loginfo('Goal accepted')
         return True
 
+    ## @brief Callback of the node
+    #  Activated when a goal is received
+    #  @param goal: skill goal
     def execute_cb(self, goal):
-        """
-        Callback of the node. Activated when a goal is received
-
-        @param goal: jokes_skill goal.
-        """
 
         # Init skill variables
         self.init_variables()
@@ -537,10 +469,11 @@ class JokesSkill(Skill):
                     # Exception check
                     self.exception_check() # If requested, it raises exception, else, it continues
 
-                    # Get params
-                    self.language = self.get_param('langauge')
-                    self.user_name = self.get_param('user_name')
-                    # Empty feedback status
+                    # Initialization
+                    # -- Get params -- #
+                    language = get_param('language')
+                    user_name = get_param('user_name')
+                    # -- Empty feedback status -- #
                     self._feedback.app_status = ''
 
                     # Restart timer
@@ -551,7 +484,7 @@ class JokesSkill(Skill):
                         rospy.loginfo("Search_info")
 
                         # Search_info
-                        etts_text_list, gesture_list = self.search_info()
+                        item_list = self.search_info(language, user_name)
 
                         # Next step
                         self._step = 'Select_info'
@@ -560,13 +493,13 @@ class JokesSkill(Skill):
                     if(self._step=='Select_info'):
                         rospy.loginfo("Select_info")
 
-                        if(len(etts_text_list) == 0):
-                            etts_text, gesture = -1, -1
+                        if(len(item_list) == 0):
+                            item = -1
                             rospy.logwarn('No more info')
                         else:
                             # Chose random
-                            index = random.randint(0, len(etts_text_list)-1)
-                            etts_text, gesture = etts_text_list.pop(index), gesture_list.pop(index)
+                            index = random.randint(0, len(item_list)-1)
+                            item = item_list.pop(index)
 
                         # Next step
                         self._step = 'Show_info'
@@ -576,12 +509,10 @@ class JokesSkill(Skill):
                         rospy.loginfo("Show_info")
 
                         # Show info
-                        ca_name, max_wait = self.show_info_handler(etts_text, gesture)
+                        ca_name, max_wait = self.show_info_handler(item, language)
                         # Wait finish CA
-                        self.wait_ca_finish(ca_name, max_time=max_wait)
-                        # Deactivate ca list
-                        self.deactivate_ca_list()
-                        if(etts_text==-1): # Error
+                        self.wait_ca_response(ca_name, max_time=max_wait)
+                        if(item==-1): # Error
                             raise ActionlibException # Cancel the goal
                         else:
                             # Next step
@@ -610,25 +541,24 @@ class JokesSkill(Skill):
                             if(self._time_run > self._time_question * n_questions):
                                 # Continue question
                                 rospy.loginfo('Asking to continue')
-                                etts_text, grammar, answer_id = self._xml_reader.GetQuestion('continue', self.language, self.user_name)
-                                ca_info = makeCA_ASR_question(etts_text=etts_text, language=self.language, grammar = grammar, answer_id = answer_id, emitter=self._emitter)
+                                etts_text, grammar, answer_id = self._xml_reader.GetQuestion('continue', language, user_name)
+                                ca_info = makeCA_ASR_question(etts_text=etts_text, language=language, grammar = grammar, answer_id = answer_id, emitter=self._emitter)
                                 self.ca_pub.publish(ca_info)
-                                self.update_list_ca([ca_info.ca_name])
-                                # Wait answer
-                                self.wait_ca_answer(ca_info)
-                                # Answer received
-                                if(self._answer_received == 'si'): # Continue
-                                    self._feedback.engagement = True
-                                elif(self._answer_received == 'no'): # Stops skill
-                                    # Send CA info
-                                    etts_text = self._xml_reader.GetExpression('exit', self.language, self.user_name)
-                                    ca_info = makeCA_etts_info(etts_text=etts_text, language=self.language, emitter=self._emitter)
-                                    self.ca_pub.publish(ca_info)
-                                    self.update_list_ca([ca_info.ca_name])
-                                    # Wait finish CA
-                                    self.wait_ca_finish(ca_info.ca_name, max_time=7)
-                                    raise ActionlibException # Cancel the goal
-                                else: # Continue but changes engagement
+                                self.wait_ca_response(ca_info) # Wait response
+                                # Answer
+                                if('answer_value' in self._response['values']): # Answer received
+                                    if(self._response['values']['answer_value'] == 'si'): # Continue
+                                        self._feedback.engagement = True
+                                    elif(self._response['values']['answer_value'] == 'no'): # Stops skill
+                                        # Send CA info
+                                        etts_text = self._xml_reader.GetExpression('exit', language, user_name)
+                                        ca_info = makeCA_etts_info(etts_text=etts_text, language=language, emitter=self._emitter)
+                                        self.ca_pub.publish(ca_info)
+                                        self.wait_ca_response(ca_info, max_time=6) # Wait response
+                                        raise ActionlibException # Cancel the goal
+                                    else: # Continue but changes engagement
+                                        self._feedback.engagement = False
+                                else: # Answer not received
                                     self._feedback.engagement = False
                                 # Update number of questions
                                 n_questions += 1
@@ -641,10 +571,7 @@ class JokesSkill(Skill):
                 except ActionlibException:
                     rospy.logwarn('Preempted or cancelled')
                     # Feedback
-                    if(self._status == self.STOPPED):
-                        self._feedback.app_status = 'stop_ok'
-                    else:
-                        self._feedback.app_status = 'cancel_ok'
+                    self._feedback.app_status = 'cancel_ok'
                     # Result
                     self._result.skill_result = self._result.FAIL # Preempted
                     # Exec loop variable
@@ -666,7 +593,7 @@ class JokesSkill(Skill):
                     self._exec_out = False
                 #=================== Exceptions ===================#
                 # Deactivate ca list
-                self.deactivate_ca_list()
+                self.deactivate_ca()
                 
                 # Publish feedback at the end of loop
                 self._as.publish_feedback(self._feedback)
@@ -694,6 +621,11 @@ class JokesSkill(Skill):
             self._feedback.app_status = 'completed_fail'
             self._as.publish_feedback(self._feedback)
             self._as.set_preempted(self._result)
+
+        # Default image
+        ca_info = makeCA_defaultImage(emitter=self._emitter)
+        self.ca_pub.publish(ca_info)
+
         rospy.loginfo("#############################")
         rospy.loginfo("######## Result sent ########")
         rospy.loginfo("#############################")

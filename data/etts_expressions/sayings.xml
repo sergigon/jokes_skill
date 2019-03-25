@@ -1,1127 +1,1127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--- List of sayings used in skill -->
-<sayings>
+<!--- List of items used in skill -->
+<items>
 
-	<saying id="1" category="short">
+	<item id="1" category="short">
 		<etts language="es">A buen entendedor pocas palabras bastan.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A caballo regalado no le mires el dentado.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A cada cerdo le llega su San Martín.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A grandes males, grandes remedios.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Agua que no has de beber, déjala correr.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A la cama no te irás sin saber una cosa más.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A la chita callando, hay quien se va aprovechando.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A las diez deja la casa de quien es y si en la tuya estás te acostarás.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A las diez, en la cama estés y mejor antes que después.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Al pan, pan y al vino, vino.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Al saber lo llaman suerte.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A mal tiempo, buena cara.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Ande yo caliente y ríase la gente.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A palabras necias, oídos sordos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Aprendiz de mucho, maestro de nada.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">A río revuelto, ganancia de pescadores.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Aunque la mona vista de seda, mona se queda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Barriga llena no cree en hambre ajena.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Bicho malo nunca muere.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Bien reza quien en servir a Dios piensa.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Buenos y malos martes, los hay en todas partes.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Bueno y barato no caben en un zapato.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Burro grande, ande o no ande.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cada cual sabe donde le aprieta el zapato.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cada loco con su tema y cada lobo por su senda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cada maestrillo tiene su librillo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cada oveja con su pareja.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cada palo aguante su vela.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cantarillo que muchas veces va a la fuente o deja el asa o la frente.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cántaro que mucho va a la fuente alguna vez de rompe.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Castellano fino, el pan pan y el vino vino.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cinco no son montón, pero siete ya lo son.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Con el tiempo y la paciencia se adquiere la ciencia.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Con la ayuda del vecino mató mi padre un cochino.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Con virtud y bondad se adquiere autoridad.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cree el ladrón que todos son de su condición.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cría cuervos y te sacaran los ojos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cría fama y échate a dormir.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando el diablo no tiene nada que hacer mata moscas con el rabo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando el gato está ausente, los ratones se divierten.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando el río suena agua lleva.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando el tabernero vende la bota o sabe a pez, o está rota.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando las barbas de tu vecino veas cortar, pon las tuyas a remojar.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando masques no chasques.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando menos se piensa salta la liebre.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando una puerta se cierra ciento se abren.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuando uno no quiere dos no riñen.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuanto más alto se sube más grande es la caída.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuanto más tienes más quieres.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuarentón y solterón, ¡qué suerte tienes ladrón!</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Cuenta errada, no vale nada.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Dame pan, y dime tonto.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">De músico, poeta y loco, todos tenemos un poco.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">De inteligentes y de sabios, es perdonar injurias y olvidar agravios.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">De los cuarenta para arriba, no te mojes la barriga.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">De los escarmentados nacen los avisados.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">De noche todos los gatos son pardos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Del amo y del mulo cuanto más lejos más seguros.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Del árbol caído todos hacen leña.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Del dicho al hecho hay mucho trecho.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Dentro de cien años todos calvos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Después de comer ni un sobre has de leer.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Días de mucho, vísperas de nada.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Dime de lo que presumes y te diré de lo que careces.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Dinero que prestaste, enemigo que te echaste.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Donde hay patrón no manda marinero.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Donde las dan las toman.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Dos no discuten si uno no quiere.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El hombre propone y Dios dispone.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El hombre y el oso cuanto más feo más hermoso.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El mejor maestro echa un borrón.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El necio cree que todo lo sabe.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El ojo del amo engorda al caballo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El perro del hortelano ni come, ni deja comer a su amo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que a hierro mata a hierro muere.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que algo quiere algo le cuesta.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que ambiciona lo ajeno pronto pierde lo propio.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que avisa no es traidor.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que busca encuentra.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que calla otorga.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que canta sus males espanta.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que da lo que tiene no está obligado a dar más.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que da primero da dos veces.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que espera desespera.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que guarda halla.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que hizo la ley hizo la trampa.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que juega con fuego siempre sale quemado.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que la hace la paga.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que la sigue la consigue.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que mucho abarca poco aprieta.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que mucho corre pronto para.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que mucho duerme poco aprende.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no corre vuela.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no llora no mama.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que mucho duerme poco vive.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no sabe es como el que no ve.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no se arriesga no pasa la mar.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no se consuela es por que no quiere.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que no tiene cabeza tiene que tener pies.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que parte y reparte se queda con la mejor parte.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que ríe el último ríe dos veces.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que roba a un ladrón tiene cien años de perdón.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que se pica ajos come.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que siembra vientos recoge tempestades.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que tenga tienda que la atienda y si no que la venda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que tiene boca se equivoca.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que tiene padrino se bautiza.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El que tuvo, retuvo y guardó para la vejez.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El saber no ocupa lugar.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El sabio siempre quiere aprender, el ignorante siempre quiere enseñar.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El tiempo todo lo cura y todo lo muda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">El tiempo todo lo cura menos vejez y locura.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En cada corral un solo gallo y en cada casa un solo amo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En el ajedrez el Rey y el Peón van siempre al mismo cajón.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En el medio está la virtud.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En el país de los ciegos el tuerto es el rey.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En martes ni te cases ni te embarques.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En perro flaco todo son pulgas.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En todas partes cuecen habas y en mi casa a calderadas.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">En viernes y martes ni te cases ni te embarques.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Entre dos muelas cordales nunca metas tus pulgares.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Errar es humano, perdonar es de sabios.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Es de bien nacidos ser agradecidos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Favor con favor se paga.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Gallo que no canta, algo tiene en la garganta.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Genio y figura hasta la sepultura.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Guarda y no prestes, porfía y no apuestes.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Haz bien y no mires a quien.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Hechos son amores y no buenas razones.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Hombre prevenido vale por dos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Jugar y nunca perder, no puede ser.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La avaricia rompe el saco.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La dicha de la fea la hermosa la desea.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La esperanza es lo último que se pierde.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La ociosidad es la madre de todos los vicios.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La paciencia es la madre de la ciencia.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La práctica vale más que la gramática.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La primera impresión es la que cuenta.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Las cuentas claras y el chocolate espeso.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">La suerte de la fea la bonita la desea.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Libro prestado, perdido o estropeado.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo bueno si breve, dos veces bueno y si malo, menos malo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo cortes no quita lo valiente.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo prometido es deuda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo que no mata, engorda.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo que poco cuesta poco se aprecia.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Lo que uno no quiere el otro lo desea.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Los duelos con pan son menos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Los toros se ven mejor desde la barrera.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Los últimos serán los primeros.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Mal de muchos consuelo de tontos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Malo vendrá que bueno me hará.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Manos blancas no ofenden.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más sabe el diablo por viejo que por diablo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale llegar a tiempo que rondar cien años.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale malo conocido que bueno por conocer.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale maña que fuerza.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale pájaro en mano que ciento volando.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale prevenir que curar.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale ser cabeza de ratón que cola de león.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale un hoy que diez mañanas.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale un «toma» que dos «te daré».</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Más vale una vez colorado que ciento amarillo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Matrimonio y mortaja del cielo baja.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Mientras hay vida hay esperanza.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Muchos pocos hacen un mucho.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Muerto el perro se acaba la rabia.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Mujer enferma, mujer eterna.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Nadie escarmienta en cabeza ajena.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Nadie sabe lo que tiene hasta que lo pierde.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No da quien tiene, sino quien quiere.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No es más limpio el que más limpia, sino el que menos ensucia.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No es oro todo lo que reluce.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay bien ni mal que cien años dure.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay bien que dure, ni mal que no se acabe.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay dos sin tres.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay enemigo pequeño.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay peor cuña que la de la misma madera.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No hay que buscarle tres patas al gato, sabiendo que tiene cuatro.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No por mucho madrugar amanece más temprano.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No se hizo la miel para la boca del asno.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No solo de pan vive el hombre.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No todo el monte es orégano.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">No vendas la piel antes de cazar al oso.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Nunca digas de este agua no beberé.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Nunca es tarde si la dicha es buena.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Nunca llueve a gusto de todos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Obras son amores y no buenas razones.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Ocasión perdida no vuelve más en la vida.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Ojos que no ven corazón que no siente.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Para coger peces hay que mojarse el culo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Perro ladrador, poco mordedor.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Piensa el ladrón que todos son de su condición..</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Piensa mal y acertarás, aunque alguna vez te equivocarás.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Por el hilo se saca el ovillo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Por el humo se sabe donde está el fuego.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Por la noche todos los gatos son pardos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Por mucho trigo nunca es mal año.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Por un perro que maté, mataperros me llamaron.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Primero es la obligación que la devoción.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Querer es poder.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Quien da primero, da dos veces.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Quien hace lo que puede no está obligado a más.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Quien hace lo que puede, hace lo que debe.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Quien mal anda mal acaba.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Sabe mas el diablo por viejo, que por diablo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Sarna con gusto, no pica.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Se dice el pecado, pero no el pecador.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Siempre hay un roto para un descosido.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Siempre pagan justos por pecadores.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Sobre gustos no hay nada escrito.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Suegra y nuera, perro y gato, no comen en el mismo plato.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Tanto tienes, tanto vales.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Tanto va el cántaro a la fuente que al fin se rompe.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Un grano no hace granero, pero ayuda al compañero.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Una buena capa todo lo tapa.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Una cosa es predicar y otra dar trigo.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Una retirada a tiempo es una victoria.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Un dedo no hace mano, pero sí con sus hermanos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Unos nacen con estrella y otros nacen estrellados.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Unos tienen la fama y otros cardan la lana.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Ver la paja en el ojo ajeno y no la viga en el propio.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Vísteme despacio, que tengo prisa.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
-	<saying id="1" category="short">
+	</item>
+	<item id="1" category="short">
 		<etts language="es">Zapatero a tus zapatos.</etts>
-		<gesture>alz_eyes_laughing</gesture>
+		<gesture></gesture>
 		<tags></tags>
-	</saying>
+	</item>
 
-</sayings>
+</items>
