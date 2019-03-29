@@ -17,3 +17,6 @@ class PauseException(Exception):
 
 class ErrorException(Exception):
     pass
+
+class StopSkillException(Exception):
+    pass

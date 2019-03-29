@@ -27,7 +27,7 @@ from interaction_utils.ca_functions import *
 from context_manager.params_lib import get_param
 from hri_manager.key_value_pairs import to_dict
 from jokes_skill.xml_reader import XMLReader
-from jokes_skill.exceptions_lib import PauseException, ErrorException
+from jokes_skill.exceptions_lib import PauseException, ErrorException, StopSkillException
 
 # Libraries
 import random
@@ -425,6 +425,8 @@ class JokesSkill(Skill):
     ## @brief Callback of the node
     #  Activated when a goal is received
     #  @param goal: skill goal
+      #  @raise ErrorException: Error found
+      #  @raise StopSkillException: Stops the skill
     def execute_cb(self, goal):
 
         # Init skill variables
@@ -513,7 +515,7 @@ class JokesSkill(Skill):
                         # Wait finish CA
                         self.wait_ca_response(ca_name, max_time=max_wait)
                         if(item==-1): # Error
-                            raise ActionlibException # Cancel the goal
+                            raise StopSkillException # Stops the skill
                         else:
                             # Next step
                             self._step = 'StepFinal'
@@ -521,7 +523,8 @@ class JokesSkill(Skill):
                     # Step error
                     else:
                         rospy.logwarn("Step '%s' is not specified in the code" % self._step)
-                        raise ActionlibException # Cancel the goal
+                        raise ErrorException('Step error')
+
 
                     self.update_timer() # Update self._time_run
 
@@ -567,11 +570,20 @@ class JokesSkill(Skill):
                     self.exception_check() # If requested, it raises exception, else, it continues
 
                 #################### Exceptions ####################
-                ### Preempted or cancel:
+                ### Preempted or cancel
                 except ActionlibException:
                     rospy.logwarn('Preempted or cancelled')
                     # Feedback
                     self._feedback.app_status = 'cancel_ok'
+                    # Result
+                    self._result.skill_result = self._result.FAIL # Preempted
+                    # Exec loop variable
+                    self._exec_out = True
+                ### Stops skill
+                except StopSkillException:
+                    rospy.logwarn('Skill stopped')
+                    # Feedback
+                    self._feedback.app_status = 'skill_stopped'
                     # Result
                     self._result.skill_result = self._result.FAIL # Preempted
                     # Exec loop variable
