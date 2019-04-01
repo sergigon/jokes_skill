@@ -354,7 +354,7 @@ class JokesSkill(Skill):
                 max_wait = 20
 
         rospy.logdebug('etts_text: %s, language: %s, gesture: %s, image_url: %s, tablet_type: %s' % (etts_text, language, gesture, self._default_image, 'image'))
-        ca_info = makeCA_info(etts_text=etts_text, language=language, gesture=gesture, tablet_url=self._default_image, tablet_type='image', emitter=self._emitter)
+        ca_info = makeCA_info(etts_text=etts_text, language=language, gesture=gesture, tablet_url=self._default_image, tablet_type='gif', emitter=self._emitter)
         self.ca_pub.publish(ca_info)
 
         return ca_info, max_wait
